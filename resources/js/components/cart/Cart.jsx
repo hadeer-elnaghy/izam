@@ -9,6 +9,7 @@ import Navbar from '../common/Navbar';
 import { useNavigate } from 'react-router-dom';
 import CartProductCard from './CartProductCard';
 import QuantitySelector from '../common/QuantitySelector';
+import MobileNavbar from '../common/MobileNavbar';
 import CircularProgress from '@mui/material/CircularProgress';
 
 export default function Cart() {
@@ -23,7 +24,13 @@ export default function Cart() {
     return (
       <Box sx={{ bgcolor: 'secondary.main', minHeight: '100vh' }}>
         <PromoBar />
-        <Navbar />
+        <Box sx={{ display: { xs: 'block', md: 'block',lg:'none',sm:'block' } }}>
+         <MobileNavbar />
+        </Box>
+      
+        <Box sx={{ display: { xs: 'none',sm: 'none', md: 'none',lg:'block' } }}>
+          <Navbar />
+        </Box>
         <Box
           sx={{
             minHeight: '60vh',
@@ -108,7 +115,13 @@ export default function Cart() {
 
     <PromoBar />
 
-    <Navbar />
+    <Box sx={{ display: { xs: 'block', md: 'block',lg:'none',sm:'block' } }}>
+         <MobileNavbar />
+        </Box>
+      
+        <Box sx={{ display: { xs: 'none',sm: 'none', md: 'none',lg:'block' } }}>
+          <Navbar />
+        </Box>
 
     <Box sx={{ bgcolor: 'secondary.main', minHeight: '100vh', py: 2, px: isMobile ? 0.5 : 10  }}>
      

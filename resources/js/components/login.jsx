@@ -17,6 +17,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import PromoBar from './common/PromoBar';
 import Navbar from './common/Navbar';
+import MobileNavbar from './common/MobileNavbar';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -97,7 +98,13 @@ export default function Login() {
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: 'secondary.main' }}>
       <PromoBar />
-      <Navbar />
+      <Box sx={{ display: { xs: 'block', md: 'block',lg:'none',sm:'block' } }}>
+        <MobileNavbar />
+      </Box>
+    
+      <Box sx={{ display: { xs: 'none',sm: 'none', md: 'none',lg:'block' } }}>
+        <Navbar />
+      </Box>
       <Container
         sx={{
           display: 'flex',
