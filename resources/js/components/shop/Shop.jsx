@@ -16,6 +16,7 @@ import QuantitySelector from '../common/QuantitySelector';
 
 
 export default function Shop() {
+  const navigate = useNavigate();
   const { cart, setCart } = useCart();
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
@@ -113,7 +114,7 @@ export default function Shop() {
 
       <Navbar />
 
-      <Box sx={{ width: '100%', mt: 2, display: { xs: 'none', md: 'block' } }}>
+      <Box sx={{ width: '100%', mt: 2, display: { xs: 'none', sm: 'none', md: 'none',lg:'block' } }}>
           <Breadcrumbs aria-label="breadcrumb" sx={{ px: 10 }}>
             <Link underline="hover" color="inherit" href="/">
               Home
@@ -126,7 +127,7 @@ export default function Shop() {
 
       <Box
         sx={{
-          // display: 'flex',
+           display: 'flex',
           flexDirection: { xs: 'column', sm: 'column', md: 'column',lg:'row' },
           gap: 2,
           px: { xs: 1, md: 2 },
@@ -136,7 +137,7 @@ export default function Shop() {
         {/* Filter Icon - hidden on mobile */}
        <Box
           sx={{
-            display: {xs: 'none', sm: 'none', md: 'none',lg:'row' },
+            display: { xs: 'none', sm: 'none', md: 'none',lg:'flex' },
             alignItems: 'center',
             justifyContent: 'center',
             minWidth: 70,
@@ -288,7 +289,7 @@ export default function Shop() {
         {/* Order Summary - hidden on mobile */}
         <Box
           sx={{
-            display: {xs: 'none', sm: 'none', md: 'none',lg:'row'},
+            display: { xs: 'none', sm: 'none', md: 'none',lg:'block' },
             flex: 1,
             minWidth: 280,
             bgcolor: 'white',
