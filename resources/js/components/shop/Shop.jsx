@@ -197,7 +197,7 @@ export default function Shop() {
             <IconButton
               onClick={() => setDrawerOpen(true)}
               sx={{
-                display: { xs: 'flex', md: 'none' },
+                display: { display: { xs: 'flex', md: 'flex',lg:'none',sm:'flex' }},
                 bgcolor: 'white',
                 border: '1px solid #eee',
                 borderRadius: 2,
