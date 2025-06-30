@@ -42,8 +42,8 @@ export default function CartProductCard({ item, orderPlaced, onCartChange, onRem
             src={item.image}
             alt={item.name}
             style={{
-              width: 90,
-              height: 90,
+              width: 150,
+              height: 150,
               objectFit: 'contain',
               borderRadius: 8,
               background: 'secondary.main',

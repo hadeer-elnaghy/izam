@@ -56,7 +56,7 @@ export default function Navbar() {
           )}
           {/* Logo image */}
           <img
-            src="/images/izam_logo.png"
+            src="public/images/izam_logo.png"
             alt="Logo"
             style={{ height: isMobile ? 28 : 32, width: 'auto', display: 'block', cursor: 'pointer' }}
             onClick={() => navigate('/')}

@@ -110,7 +110,7 @@ export default function Cart() {
 
     <Navbar />
 
-    <Box sx={{ bgcolor: 'secondary.main', minHeight: '100vh', px: { xs: 1, md: 4 }, py: 2, px: isMobile ? 0.5 : 10  }}>
+    <Box sx={{ bgcolor: 'secondary.main', minHeight: '100vh', py: 2, px: isMobile ? 0.5 : 10  }}>
      
       <Box sx={{ width: '100%', mb: 2, display: { xs: 'none', md: 'block' } }}>
         <Breadcrumbs aria-label="breadcrumb">
@@ -124,7 +124,7 @@ export default function Cart() {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
+          flexDirection: { xs: 'column', sm: 'column', md: 'column',lg:'row' },
           gap: 3,
           alignItems: 'flex-start',
         }}
@@ -135,7 +135,7 @@ export default function Cart() {
             flex: 2,
             p: 3,
             borderRadius: 3,
-            width: { xs: '100%', md: 'auto' },
+            width: '100%',
             mb: { xs: 2, md: 0 },
             minHeight: 120,
             display: 'flex',
@@ -186,7 +186,7 @@ export default function Cart() {
             flex: 1,
             p: 3,
             borderRadius: 3,
-            width: { xs: '100%', md: 'auto' },
+            width: '100%',
           }}
         >
           <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
