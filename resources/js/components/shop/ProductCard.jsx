@@ -86,13 +86,13 @@ export default function ProductCard({ product, cart, onCartChange, onProductClic
         <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 0.5 }}>
           <Typography
             fontWeight={700}
-            fontSize={14}
+            fontSize={17}
             sx={{
               flex: 1,
               overflow: 'hidden',
               textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
-              maxWidth: 140,
+              maxWidth: 200,
             }}
           >
             {product.name}
@@ -116,7 +116,7 @@ export default function ProductCard({ product, cart, onCartChange, onProductClic
           )}
         </Box>
          <Box sx={{ display: 'flex',justifyContent: 'space-between', mb: 1 }}>
-         <Typography fontWeight={700} fontSize={15} mb={0.5}>
+         <Typography fontWeight={700} fontSize={17} mb={0.5}>
           ${product.price}
         </Typography>
        

@@ -4,6 +4,7 @@ import {
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import PromoBar from '../common/PromoBar';
+import MobileNavbar from '../common/MobileNavbar';
 import Navbar from '../common/Navbar';
 import { TuneTwoTone } from '@mui/icons-material';
 import CategoryFilter from './CategoryFilter';
@@ -13,6 +14,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../providers/CartProvider';
 import QuantitySelector from '../common/QuantitySelector';
+import { useMediaQuery } from '@mui/material';
 
 
 export default function Shop() {
@@ -32,6 +34,7 @@ export default function Shop() {
   const [tempCategory, setTempCategory] = useState(selectedCategory);
   const [tempPriceRange, setTempPriceRange] = useState(priceRange);
 
+  const isMobile = useMediaQuery('(max-width:600px)');
 
   useEffect(() => {
     setLoading(true);
@@ -112,7 +115,14 @@ export default function Shop() {
     <Box sx={{ bgcolor: 'secondary.main', minHeight: '100vh' }}>
       <PromoBar />
 
-      <Navbar />
+      {/* Mobile Navbar: visible on xs/sm, hidden on md+ */}
+      <Box sx={{ display: { xs: 'block', md: 'block',lg:'none',sm:'block' } }}>
+        <MobileNavbar />
+      </Box>
+      {/* Desktop Navbar: hidden on xs/sm, visible on md+ */}
+      <Box sx={{ display: { xs: 'none',sm: 'none', md: 'none',lg:'block' } }}>
+        <Navbar />
+      </Box>
 
       <Box sx={{ width: '100%', mt: 2, display: { xs: 'none', sm: 'none', md: 'none',lg:'block' } }}>
           <Breadcrumbs aria-label="breadcrumb" sx={{ px: 10 }}>
@@ -240,7 +250,7 @@ export default function Shop() {
                       }}
                       maxStock={product.stock}
                       buttonSpacing={0}
-                      containerWidth={100}
+                      containerWidth={150}
                     />
                   </ProductCard>
                 </Grid>
@@ -351,7 +361,7 @@ export default function Shop() {
                       }}
                       maxStock={item.stock}
                       buttonSpacing={1}
-                      containerWidth={100}
+                      containerWidth={150}
                       showBorder={true}
                       backgroundColor="secondary.main"
                     />

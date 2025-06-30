@@ -7,7 +7,7 @@ export default function QuantitySelector({
   maxStock, 
   disabled = false,
   buttonSpacing = 1, // Default spacing between buttons
-  buttonSize = 'small',
+  buttonSize = 'large',
   containerWidth = 100
   
 }) {
