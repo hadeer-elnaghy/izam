@@ -1,4 +1,3 @@
-
 ---
 
 ## Getting Started
@@ -34,12 +33,17 @@
    php artisan migrate --seed
    ```
 
-6. **Build frontend assets**
+6. **Create storage symlink**
+   ```bash
+   php artisan storage:link
+   ```
+
+7. **Build frontend assets**
    ```bash
    npm run dev
    ```
 
-7. **Start the Laravel server**
+8. **Start the Laravel server**
    ```bash
    php artisan serve
    ```

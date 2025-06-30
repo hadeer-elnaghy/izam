@@ -99,7 +99,6 @@ export default function Login() {
       <PromoBar />
       <Navbar />
       <Container
-        maxWidth="sm"
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -112,8 +111,9 @@ export default function Login() {
         <Card
           sx={{
             width: '100%',
-            maxWidth: 400,
+            maxWidth: 600,
             p: isMobile ? 2 : 3,
+            mx: isMobile ? 10 : 0,
             borderRadius: 3,
             boxShadow: 3,
             mt: isMobile ? 4 : 0
@@ -146,7 +146,7 @@ export default function Login() {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="Enter your email"
                   required
-                  size={isMobile ? 'small' : 'medium'}
+                  size={'medium'}
                   InputLabelProps={{ shrink: true }}
                   error={!!errors.email}
                   helperText={errors.email}
@@ -164,7 +164,7 @@ export default function Login() {
                   onChange={e => setPassword(e.target.value)}
                   placeholder="Enter your password"
                   required
-                  size={isMobile ? 'small' : 'medium'}
+                  size={'medium'}
                   error={!!errors.password}
                   helperText={errors.password}
                   InputProps={{
